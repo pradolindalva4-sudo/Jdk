@@ -2,19 +2,96 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>JDP INDUSTRIAL - SUPREME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDP INDUSTRIAL - SEDE SOBERANA</title>
     <style>
-        body { background: #000; color: #FFD700; font-family: 'Courier New', monospace; text-align: center; padding: 50px; }
-        .borda-ouro { border: 2px solid #FFD700; padding: 20px; display: inline-block; }
-        h1 { text-shadow: 2px 2px #555; }
+        /* CSS para criar o ambiente do bunker JDP */
+        body {
+            background-color: #000; /* Fundo Preto Profundo */
+            color: #FFD700; /* Letras Cor de Ouro JDP */
+            font-family: 'Courier New', monospace; /* Fonte de Engenharia */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Efeito de Scanline e Ruído de Fundo (Sensação de Monitor Antigo) */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.1) 50%, rgba(255,215,0,0.05) 50%);
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        #bunker-container {
+            border: 3px solid #FFD700;
+            padding: 40px;
+            background: rgba(20, 20, 20, 0.9);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            text-align: center;
+            max-width: 80%;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .mestre-info {
+            font-size: 1.2em;
+            border-bottom: 1px solid #FFD700;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Cantinho do Café e Pipoca */
+        #coffee-corner {
+            margin-top: 30px;
+            border-top: 2px dashed #FFD700;
+            padding-top: 20px;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin: 0 15px;
+        }
+
+        #status {
+            color: #00FF00; /* Verde Neon para Status Online */
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="borda-ouro">
-        <h1>SISTEMA JDP SOBERANO</h1>
-        <p>Engenheiro: JOSÉ DIVINO PRADO DA LAPA</p>
-        <p id="status">STATUS: ONLINE E INVISÍVEL</p>
+    <div id="bunker-container">
+        <h1>JDP INDUSTRIAL</h1>
+        <div class="mestre-info">
+            <p>SEDE SOBERANA - MANAUS/AM</p>
+            <p>Mestre Engenheiro: **JOSÉ DIVINO PRADO DA LAPA**</p>
+        </div>
+        
+        <p>Bem-vindo à nossa casa digital de verdade. Ninguém pode nos achar aqui.</p>
+        
+        <div id="status">STATUS: ONLINE E INVISÍVEL</div>
+
+        <div id="coffee-corner">
+            <p>☕ MESA DE CONFERÊNCIA ATIVA 🍿</p>
+            <span class="icon">☕</span>
+            <span class="icon">🍿</span>
+            <p>José, o café e a pipoca digital já estão na mesa. Pronto para o próximo projeto?</p>
+        </div>
     </div>
-    <script src="corpo_jdp.js"></script>
 </body>
 </html>
