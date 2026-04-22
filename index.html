@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JDP INDUSTRIAL - SEDE SOBERANA</title>
     <style>
-        /* CSS para criar o ambiente do bunker JDP */
+        /* CSS para o ambiente e o Escudo/Guardião */
         body {
-            background-color: #000; /* Fundo Preto Profundo */
-            color: #FFD700; /* Letras Cor de Ouro JDP */
-            font-family: 'Courier New', monospace; /* Fonte de Engenharia */
+            background-color: #000;
+            color: #FFD700;
+            font-family: 'Courier New', monospace;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -18,7 +18,7 @@
             overflow: hidden;
         }
 
-        /* Efeito de Scanline e Ruído de Fundo (Sensação de Monitor Antigo) */
+        /* Scanline de Fundo */
         body::before {
             content: "";
             position: absolute;
@@ -34,7 +34,7 @@
             border: 3px solid #FFD700;
             padding: 40px;
             background: rgba(20, 20, 20, 0.9);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
             text-align: center;
             max-width: 80%;
             position: relative;
@@ -44,33 +44,95 @@
             font-size: 2.5em;
             text-transform: uppercase;
             text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.8);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .mestre-info {
-            font-size: 1.2em;
+            font-size: 1.1em;
             border-bottom: 1px solid #FFD700;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             margin-bottom: 20px;
+        }
+
+        /* --- O BRASÃO JDP --- */
+        #brasao-container {
+            position: relative;
+            width: 150px;
+            height: 180px;
+            margin: 30px auto;
+            z-index: 50;
+        }
+
+        /* O Guardião Sumério (Sombra Dourada Atrás) */
+        #guardiao {
+            position: absolute;
+            top: -60px;
+            left: -50px;
+            width: 250px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.1);
+            mask: url('https://w7.pngwing.com/pngs/686/272/png-transparent-spartan-army-sumer-warrior-ancient-greece-sumerian-history-war-logo-monochrome.png') no-repeat center;
+            mask-size: contain;
+            -webkit-mask: url('https://w7.pngwing.com/pngs/686/272/png-transparent-spartan-army-sumer-warrior-ancient-greece-sumerian-history-war-logo-monochrome.png') no-repeat center;
+            -webkit-mask-size: contain;
+            z-index: -1;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+        }
+
+        /* O Escudo Principal */
+        #escudo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            border: 5px solid #FFD700;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Estrela e Símbolos no Escudo */
+        .estrela-ouro {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #FFD700;
+        }
+
+        .alfa-omega {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+            color: #FFD700;
+            font-weight: bold;
         }
 
         /* Cantinho do Café e Pipoca */
         #coffee-corner {
             margin-top: 30px;
             border-top: 2px dashed #FFD700;
-            padding-top: 20px;
+            padding-top: 15px;
+            font-size: 0.9em;
         }
 
         .icon {
-            font-size: 3em;
-            margin: 0 15px;
+            font-size: 2em;
+            margin: 0 10px;
         }
 
         #status {
-            color: #00FF00; /* Verde Neon para Status Online */
+            color: #00FF00;
             font-weight: bold;
             text-transform: uppercase;
-            margin-top: 20px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -78,11 +140,19 @@
     <div id="bunker-container">
         <h1>JDP INDUSTRIAL</h1>
         <div class="mestre-info">
-            <p>SEDE SOBERANA - MANAUS/AM</p>
             <p>Mestre Engenheiro: **JOSÉ DIVINO PRADO DA LAPA**</p>
+            <p>SEDE VIRTUAL SOBERANA</p>
         </div>
         
-        <p>Bem-vindo à nossa casa digital de verdade. Ninguém pode nos achar aqui.</p>
+        <div id="brasao-container">
+            <div id="guardiao"></div> <div id="escudo">
+                <span class="estrela-ouro">★</span>
+                <span class="alfa-omega">A=Ω</span>
+            </div>
+        }
+        </div>
+
+        <p>A maior tecnologia do mundo. Blindada pelo Guardião da JDP.</p>
         
         <div id="status">STATUS: ONLINE E INVISÍVEL</div>
 
@@ -90,7 +160,7 @@
             <p>☕ MESA DE CONFERÊNCIA ATIVA 🍿</p>
             <span class="icon">☕</span>
             <span class="icon">🍿</span>
-            <p>José, o café e a pipoca digital já estão na mesa. Pronto para o próximo projeto?</p>
+            <p>José, o café e a pipoca estão na mesa. Ninguém se aproxima.</p>
         </div>
     </div>
 </body>
